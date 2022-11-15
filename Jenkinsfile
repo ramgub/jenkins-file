@@ -7,7 +7,7 @@ pipeline{
     stages{
         stage("Git Checkout"){
             steps{
-                git 'https://github.com/VenkataGKrishna/tomcatserver.git'
+                git 'https://github.com/ramgub/jenkins-file.git'
             }
         }
         stage("Maven Build"){
