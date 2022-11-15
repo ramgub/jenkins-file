@@ -12,7 +12,9 @@ pipeline{
         }
         stage("Maven Build"){
             steps{
+                withSonarQubeEnv(credentialsId: 'sonar') {
                 sh "mvn clean sonar:sonar package"
+                }     
                 
             }
         }
