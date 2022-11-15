@@ -12,10 +12,11 @@ pipeline{
         }
         stage("Maven Build"){
             steps{
-                withSonarQubeEnv(credentialsId: 'sonar') {
-                sh "mvn clean sonar:sonar package"
-                }     
-                
+                script{
+                   withSonarQubeEnv(credentialsId: 'sonar') {
+                   sh "mvn clean sonar:sonar package"
+                   }     
+                }
             }
         }
         stage('Upload War To Nexus'){
